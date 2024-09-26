@@ -44,7 +44,12 @@ SECRET_KEY = 'django-insecure-0tuciydxq)-4!o86m6pi4v)o^i60od7eytu)i%k@)p=g^apd07
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['apiproductos-mocf.onrender.com']
+ALLOWED_HOSTS = [
+    'apiproductos-mocf.onrender.com',  # Dominio de Render
+    'localhost',                       # Para pruebas locales
+    '127.0.0.1',                      # Dirección local
+]
+
 
 
 # Application definition
