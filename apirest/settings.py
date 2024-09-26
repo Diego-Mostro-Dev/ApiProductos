@@ -158,3 +158,10 @@ cloudinary.config(
     api_key='386998392895758',
     api_secret='FoswzKR4oeEWCgX5oHeqH6i_Rrk',
 )
+
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+
+STATICFILES_DIRS = [BASE_DIR / 'static']
