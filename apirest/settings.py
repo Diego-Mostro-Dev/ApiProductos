@@ -11,6 +11,25 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary
+import cloudinary.api
+import cloudinary.uploader
+
+# Cloudinary settings
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'daes6f85n',  # Reemplaza con tu Cloud Name
+    'API_KEY': '386998392895758',         # Reemplaza con tu API Key
+    'API_SECRET': 'FoswzKR4oeEWCgX5oHeqH6i_Rrk',   # Reemplaza con tu API Secret
+}
+
+# Configura la URL para los archivos multimedia
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+
+
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +59,8 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'coreapi',
+    'cloudinary',
+    'cloudinary_storage' , 
 ]
 
 MIDDLEWARE = [
@@ -132,3 +153,8 @@ REST_FRAMEWORK = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+cloudinary.config(
+    cloud_name='daes6f85n',
+    api_key='386998392895758',
+    api_secret='FoswzKR4oeEWCgX5oHeqH6i_Rrk',
+)
