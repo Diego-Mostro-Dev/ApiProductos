@@ -51,6 +51,11 @@ ALLOWED_HOSTS = [
     '127.0.0.1',                      # Dirección local
 ]
 
+# Permitir orígenes para CORS
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Origen de tu aplicación React en local
+    "https://apiproductos-mocf.onrender.com",  # Dominio de tu API en Render
+]
 
 
 # Application definition
@@ -61,6 +66,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'corsheaders',
     'django.contrib.staticfiles',
     'api',
     'rest_framework',
@@ -70,6 +76,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -143,13 +150,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
-""" STATIC_URL = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field """
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
