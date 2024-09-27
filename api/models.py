@@ -6,7 +6,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     price = models.FloatField()
     description = models.TextField()
-    image = models.URLField(max_length=500, null=True, blank=True)  # Usar URLField para la URL de la imagen
+    image = models.ImageField(upload_to='products/', storage=CloudinaryStorage())
 
     def save(self, *args, **kwargs):
         if self.image:  # Solo si hay una imagen
