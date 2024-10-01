@@ -55,6 +55,7 @@ ALLOWED_HOSTS = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Origen de tu aplicación React en local
     "https://apiproductos-mocf.onrender.com",  # Dominio de tu API en Render
+    "https://ecommerceproductos.netlify.app",  # Origen de tu aplicación en Netlify
 ]
 
 
